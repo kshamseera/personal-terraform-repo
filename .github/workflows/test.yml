@@ -7,7 +7,6 @@ on:
 jobs:
   try-access-secret:
     runs-on: ubuntu-latest
-    environment: production
     steps:
       - name: Try to access secret
         run: |
