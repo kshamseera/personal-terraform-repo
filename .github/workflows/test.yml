@@ -1,0 +1,13 @@
+name: Test Secrets Access
+
+on:
+  push:
+    branches: [ "*" ]  
+
+jobs:
+  try-access-secret:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Try to access secret
+        run: |
+          echo "PROD_SECRET=${{ secrets.PROD_SECRET }}"
