@@ -1,18 +1,20 @@
 name: Test Secrets Access
 
 on:
-  push:
-    branches: [ "*" ]
+    push:
+        branches: ["*"]
+permissions:
+    contents: write
 
 jobs:
-  try-access-secret:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
+    try-access-secret:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
 
-      - name: Try to access secret
-        run: |
-          echo "PROD_SECRET=${{ secrets.TERRAFORM_REPO_SCOPED_TOKEN }}"
-          bash bin/terraform/test-script.sh
-        env:
-          TERRAFORM_REPO_SCOPED_TOKEN: ${{ secrets.TERRAFORM_REPO_SCOPED_TOKEN }}
+            - name: Try to access secret
+              run: |
+                  echo "PROD_SECRET=${{ secrets.TERRAFORM_REPO_SCOPED_TOKEN }}"
+                  bash bin/terraform/test-script.sh
+              env:
+                  TERRAFORM_REPO_SCOPED_TOKEN: ${{ secrets.TERRAFORM_REPO_SCOPED_TOKEN }}
