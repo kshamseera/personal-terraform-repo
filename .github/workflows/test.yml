@@ -9,6 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+            ${{ secrets.TERRAFORM_REPO_SCOPED_TOKEN }}
       - name: Try to access secret
         run: |
           echo "PROD_SECRET=${{ secrets.TERRAFORM_REPO_SCOPED_TOKEN }}"

@@ -10,8 +10,8 @@ git switch main
 # cd $${pwdval%aaf-terraform*}/aaf-terraform || exit
 # echo "$(pwd)"
 git checkout main
-git config user.email "ci@aaf.edu.au"
-git config user.name "AAF CI"
+git config user.email "testemail@aaf.edu.au"
+git config user.name "AAF CI test user"
 echo Hello > README.md
 git add README.md
 git pull --ff-only
