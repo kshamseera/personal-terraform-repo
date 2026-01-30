@@ -4,12 +4,12 @@ set -e
 
 git fetch
 
-git switch master
+git switch main
 # pwdval=$(pwd)
 # Cds into the repo root
 # cd $${pwdval%aaf-terraform*}/aaf-terraform || exit
 # echo "$(pwd)"
-git checkout master
+git checkout main
 git config user.email "ci@aaf.edu.au"
 git config user.name "AAF CI"
 echo Hello > README.md
