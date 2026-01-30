@@ -12,7 +12,7 @@ git switch main
 git checkout main
 git config user.email "testemail@aaf.edu.au"
 git config user.name "AAF CI test user"
-echo Hello > README.md
+echo Personal repo > README.md
 git add README.md
 git pull --ff-only
 git commit -m "Update README.md"

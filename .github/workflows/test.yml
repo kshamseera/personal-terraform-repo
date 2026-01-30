@@ -14,7 +14,7 @@ jobs:
 
             - name: Try to access secret
               run: |
-                  echo "PROD_SECRET=${{ secrets.TERRAFORM_REPO_SCOPED_TOKEN }}"
+                  echo "PROD_SECRET=${secrets.PROD_SECRET }"
                   bash bin/terraform/test-script.sh
               env:
-                  TERRAFORM_REPO_SCOPED_TOKEN: ${{ secrets.TERRAFORM_REPO_SCOPED_TOKEN }}
+                  TERRAFORM_REPO_SCOPED_TOKEN: ${ secrets.PROD_SECRET }
