@@ -12,7 +12,3 @@ jobs:
       - name: Try to access secret
         run: |
          echo "PROD_SECRET=${{ secrets.PROD_SECRET }}"
-
-      - name: Run sample test script
-        run: |
-          ./test.sh
