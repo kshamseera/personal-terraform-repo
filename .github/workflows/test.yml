@@ -7,10 +7,11 @@ on:
 jobs:
   try-access-secret:
     runs-on: ubuntu-latest
+    environment: production
     steps:
       - name: Try to access secret
         run: |
-          echo "TERRAFORM_REPO_SCOPED_TOKEN=${{ secrets.TERRAFORM_REPO_SCOPED_TOKEN }}"
+         echo "PROD_SECRET=${{ secrets.PROD_SECRET }}"
 
       - name: Run sample test script
         run: |
