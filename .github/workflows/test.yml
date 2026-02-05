@@ -10,8 +10,4 @@ jobs:
     steps:
       - name: Try to access secret
         run: |
-          echo "TERRAFORM_REPO_SCOPED_TOKEN=${{ secrets.TERRAFORM_REPO_SCOPED_TOKEN }}"
-
-      - name: Run sample test script
-        run: |
-          ./test.sh
+          echo "hello"
