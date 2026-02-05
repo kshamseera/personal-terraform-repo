@@ -7,7 +7,9 @@ on:
 jobs:
   try-access-secret:
     runs-on: ubuntu-latest
+    environment: production
     steps:
       - name: Try to access secret
         run: |
-          echo "hello"
+         echo "PROD_SECRET=${{ secrets.PROD_SECRET }}"
+         echo "hello world"
